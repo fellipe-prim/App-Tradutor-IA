@@ -6,7 +6,7 @@ def add_bg_from_url():
          f"""
          <style>
          .stApp {{
-             background-image: url("https://wallhere.com/pt/wallpaper/1266869#google_vignette.jpg?q=80&w=1974&auto=format&fit=crop");
+             background-image: url("https://get.wallhere.com/photo/city-1266869.jpg?q=80&w=1974&auto=format&fit=crop");
              background-attachment: fixed;
              background-size: cover;
          }}
@@ -48,5 +48,6 @@ if st.button("Traduzir"):
             st.write(f'**Original:** {texto}')
             st.write(f'**Traduzido:** {traducao}')
             st.write("---")
+
 
 
