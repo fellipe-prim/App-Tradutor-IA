@@ -1,7 +1,7 @@
 import streamlit as st
 from deep_translator import GoogleTranslator
 
-st.title("🌍 Tradutor Multilíngue com Deep Translator")
+st.title("🌍 Primgles's personal translator")
 
 #Área de textos
 texto = st.text_area(" Digite sua frase em português:", 
@@ -30,3 +30,4 @@ if st.button("Traduzir"):
             st.write(f'**Original:** {texto}')
             st.write(f'**Traduzido:** {traducao}')
             st.write("---")
+
