@@ -1,36 +1,30 @@
 import streamlit as st
 from deep_translator import GoogleTranslator
 
-def set_background_url(image_url):
-    page_bg_img = f"""
-    <style>
-    .stApp {{
-        background-image: url("{image_url}");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }}
-    </style>
-    """
-    st.markdown(page_bg_img, unsafe_allow_html=True)
+def add_bg_from_url():
+    st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background-image: url("https://wallhere.com/pt/wallpaper/1266869#google_vignette.jpg?q=80&w=1974&auto=format&fit=crop");
+             background-attachment: fixed;
+             background-size: cover;
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
 
-# URL da imagem de fundo
-image_url = "https://wallpaperscraft.com/image/street_city_buildings_198312_2560x1440.jpg"
+# Chamada da função para aplicar o background
+add_bg_from_url()
 
-# Aplicar o background
-set_background_url(image_url)
-
-# Título do app
 st.title("Professional Language Translator")
 
-# Área de texto para entrada
-texto = st.text_area(
-    "Digite sua frase em português:",
-    "Olá! Estou aprendendo a programar em Python e a usar modelos de inteligência artificial."
-)
+#Área de textos
+texto = st.text_area(" Digite sua frase em português:", 
+                     "Olá! Estou aprendendo a programar em Python e a usar modelos de inteligência artificial.")
 
-# Dicionário de idiomas suportados
+# Seleção de idiomas
 linguas = {
     "Inglês": "en",
     "Espanhol": "es",
@@ -40,14 +34,9 @@ linguas = {
     "Japonês": "ja"
 }
 
-# Seleção de idiomas para tradução
-idiomas_escolhidos = st.multiselect(
-    "Selecione os idiomas de destino:",
-    list(linguas.keys()),
-    ["Inglês", "Espanhol"]
-)
+idiomas_escolhidos = st.multiselect("Selecione os idiomas de destino:", list(linguas.keys()), ["Inglês", "Espanhol"])
 
-# Botão para realizar tradução
+#traduzir
 if st.button("Traduzir"):
     if texto.strip() == "":
         st.warning("Digite uma frase para traduzir!")
@@ -59,4 +48,5 @@ if st.button("Traduzir"):
             st.write(f'**Original:** {texto}')
             st.write(f'**Traduzido:** {traducao}')
             st.write("---")
+
 
