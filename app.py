@@ -9,6 +9,8 @@ def add_bg_from_url():
              background-image: url("https://get.wallhere.com/photo/city-1266869.jpg?q=80&w=1974&auto=format&fit=crop");
              background-attachment: fixed;
              background-size: cover;
+             background-position: center;
+             background-repeat: no-repeat;
          }}
          </style>
          """,
@@ -48,6 +50,7 @@ if st.button("Traduzir"):
             st.write(f'**Original:** {texto}')
             st.write(f'**Traduzido:** {traducao}')
             st.write("---")
+
 
 
 
