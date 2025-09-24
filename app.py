@@ -50,4 +50,13 @@ idiomas_escolhidos = st.multiselect(
 # Botão para realizar tradução
 if st.button("Traduzir"):
     if texto.strip() == "":
-        st.warning("Digite uma fra
+        st.warning("Digite uma frase para traduzir!")
+    else:
+        for nome in idiomas_escolhidos:
+            codigo = linguas[nome]
+            traducao = GoogleTranslator(source='pt', target=codigo).translate(texto)
+            st.subheader(f'➡ Tradução para {nome} ({codigo})')
+            st.write(f'**Original:** {texto}')
+            st.write(f'**Traduzido:** {traducao}')
+            st.write("---")
+
